@@ -1,13 +1,13 @@
 # EXPERIMENT-01-INTERFACING-A-DIGITAL-OUTPUT-TO-IOT-DEVELOPMENT-BOARD
 
 
-**DATE:**
+**DATE: 17.11.2026**
 
-**NAME:**
+**NAME:SAI KRIPA **
 
-**ROLL NO:**
+**ROLL NO:212224040284**
 
-**DEPARTMENT:**
+**DEPARTMENT: CSE**
 
 ## Aim
 
@@ -97,14 +97,46 @@ With its power-efficient design, built-in LoRaWAN support, and flexible communic
 
 
 ## STM 32 CUBE PROGRAM
+```c
+#include "main.h"
 
-```
-// Your STM 32 CUBE Program code here
+UART_HandleTypeDef huart2;
+
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+
+int main(void)
+{
+  HAL_Init();
+  SystemClock_Config();
+
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+  
+  while (1)
+  {
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
+	  HAL_Delay(5000);
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
+	  HAL_Delay(5000);
+  }
+}
+
 ```
 
 ## OUTPUT
+<img width="1917" height="1140" alt="image" src="https://github.com/user-attachments/assets/0526fa17-4c5d-45e6-b91b-ac346035d58b" />
+
+<img width="1917" height="1143" alt="image" src="https://github.com/user-attachments/assets/b6e50afd-fc41-4c6b-8235-55bfcbd35cf2" />
+
+<img width="576" height="1280" alt="WhatsApp Image 2026-11-10 at 2 31 23 PM" src="https://github.com/user-attachments/assets/314fdd30-cd4a-43ac-ae07-86356b799410" />
+
+<img width="576" height="1280" alt="WhatsApp Image 2026-11-10 at 2 31 23 PM (1)" src="https://github.com/user-attachments/assets/ae6346f2-6244-4c28-898d-0419ffb7fd88" />
 
 ## Result
 
 Interfacing a digital output with ARM microcontroller based IOT development is executed and the results are verified.
+
+
 
